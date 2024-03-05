@@ -1,0 +1,5 @@
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
