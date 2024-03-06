@@ -1,5 +1,5 @@
-using Domain.Primitives;
 using Domain.Reservas;
+using Domain.Primitives;
 
 namespace Application.Reservas.Update
 {
@@ -18,11 +18,17 @@ namespace Application.Reservas.Update
         {
             if (!await _reservaRepository.ExistsAsync(new ReservaId(command.Id)))
             {
-                return Error.NotFound("Reserva.NotFound", "The reservation with the provided Id was not found.");
+                return Error.NotFound("Reserva.NotFound", "La reserva con el Id proporcionado no fue encontrada.");
             }
 
-            var reserva = await _reservaRepository.GetByIdAsync(new ReservaId(command.Id));
-            reserva.Update(command.NombreCliente, command.EmailCliente, command.TelefonoCliente, command.FechaViaje);
+            var reserva = new Reserva(
+                new ReservaId(command.Id),
+                command.Id,
+                command.NombreCliente,
+                command.EmailCliente,
+                command.TelefonoCliente,
+                command.FechaViaje
+            );
 
             _reservaRepository.Update(reserva);
 

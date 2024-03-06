@@ -1,24 +1,29 @@
 using AutoMapper;
-using Destinos.Common;
 using Domain.Destinos;
+using Destinos.Common;
 
 namespace Application.Destinos.GetAll
 {
-    internal sealed class GetAllDestinosQueryHandler : IRequestHandler<GetAllDestinosQuery, List<DestinoResponse>>
+    internal sealed class GetAllDestinosQueryHandler : IRequestHandler<GetAllDestinosQuery, ErrorOr<IReadOnlyList<DestinoResponse>>>
     {
         private readonly IDestinoRepository _destinoRepository;
-        private readonly IMapper _mapper;
-        
-        public GetAllDestinosQueryHandler(IDestinoRepository destinoRepository, IMapper mapper)
+
+        public GetAllDestinosQueryHandler(IDestinoRepository destinoRepository)
         {
             _destinoRepository = destinoRepository ?? throw new ArgumentNullException(nameof(destinoRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        
-        public async Task<List<DestinoResponse>> Handle(GetAllDestinosQuery request, CancellationToken cancellationToken)
+
+        public async Task<ErrorOr<IReadOnlyList<DestinoResponse>>> Handle(GetAllDestinosQuery query, CancellationToken cancellationToken)
         {
-            var destinos = await _destinoRepository.GetAll();
-            return _mapper.Map<List<DestinoResponse>>(destinos);
+            IReadOnlyList<Destino> destinos = await _destinoRepository.GetAll();
+
+            return destinos.Select(destino => new DestinoResponse(
+                    destino.Id.Value,
+                    destino.Nombre,
+                    destino.Descripcion,
+                    destino.Ubicacion,
+                    destino.Activo
+                )).ToList();
         }
     }
 }

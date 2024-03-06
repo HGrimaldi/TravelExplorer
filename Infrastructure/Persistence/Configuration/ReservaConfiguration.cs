@@ -1,4 +1,4 @@
-using Domain.Reserva;
+using Domain.Reservas;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

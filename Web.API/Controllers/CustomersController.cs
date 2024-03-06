@@ -2,22 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Destinos.Create;
-using Application.Destinos.Update;
-using Application.Destinos.GetById;
-using Application.Destinos.Delete;
-using Application.Destinos.GetAll;
+using Application.Customers.Create;
+using Application.Customers.Update;
+using Application.Customers.GetById;
+using Application.Customers.Delete;
+using Application.Customers.GetAll;
 using ErrorOr;
 using MediatR;
 
 namespace Web.API.Controllers
 {
-    [Route("destinos")] // Cambiar a la ruta correspondiente
-    public class DestinosController : ApiController // Cambiar el nombre del controlador y la clase base
+    [Route("customers")]
+    public class CustomersController : ApiController
     {
         private readonly ISender _mediator;
 
-        public DestinosController(ISender mediator)
+        public CustomersController(ISender mediator)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
@@ -25,10 +25,10 @@ namespace Web.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var destinosResult = await _mediator.Send(new GetAllDestinosQuery());
+            var customersResult = await _mediator.Send(new GetAllCustomersQuery());
 
-            return destinosResult.Match(
-                destinos => Ok(destinos),
+            return customersResult.Match(
+                customers => Ok(customers),
                 errors => Problem(errors)
             );
         }
@@ -36,33 +36,33 @@ namespace Web.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var destinoResult = await _mediator.Send(new GetDestinoByIdQuery(id));
+            var customerResult = await _mediator.Send(new GetCustomerByIdQuery(id));
 
-            return destinoResult.Match(
-                destino => Ok(destino),
+            return customerResult.Match(
+                customer => Ok(customer),
                 errors => Problem(errors)
             );
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateDestinoCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateCustomerCommand command)
         {
             var createResult = await _mediator.Send(command);
 
             return createResult.Match(
-                destinoId => Ok(destinoId),
+                customerId => Ok(customerId),
                 errors => Problem(errors)
             );
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateDestinoCommand command)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCustomerCommand command)
         {
             if (command.Id != id)
             {
                 List<Error> errors = new()
                 {
-                    Error.Validation("Destino.UpdateInvalid", "The request Id does not match with the url Id.")
+                    Error.Validation("Customer.UpdateInvalid", "The request Id does not match with the url Id.")
                 };
                 return Problem(errors);
             }
@@ -70,7 +70,7 @@ namespace Web.API.Controllers
             var updateResult = await _mediator.Send(command);
 
             return updateResult.Match(
-                destinoId => NoContent(),
+                customerId => NoContent(),
                 errors => Problem(errors)
             );
         }
@@ -78,10 +78,10 @@ namespace Web.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var deleteResult = await _mediator.Send(new DeleteDestinoCommand(id));
+            var deleteResult = await _mediator.Send(new DeleteCustomerCommand(id));
 
             return deleteResult.Match(
-                destinoId => NoContent(),
+                customerId => NoContent(),
                 errors => Problem(errors)
             );
         }

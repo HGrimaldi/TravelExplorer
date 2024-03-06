@@ -2,22 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Reservas.Create;
-using Application.Reservas.Update;
-using Application.Reservas.GetById;
-using Application.Reservas.Delete;
-using Application.Reservas.GetAll;
+using Application.Destinos.Create;
+using Application.Destinos.Update;
+using Application.Destinos.GetById;
+using Application.Destinos.Delete;
+using Application.Destinos.GetAll;
 using ErrorOr;
 using MediatR;
 
 namespace Web.API.Controllers
 {
-    [Route("reservas")] // Cambiar a la ruta correspondiente
-    public class ReservasController : ApiController // Cambiar el nombre del controlador y la clase base
+    [Route("destinos")]
+    public class DestinosController : ApiController
     {
         private readonly ISender _mediator;
 
-        public ReservasController(ISender mediator)
+        public DestinosController(ISender mediator)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
@@ -25,10 +25,10 @@ namespace Web.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var reservasResult = await _mediator.Send(new GetAllReservasQuery());
+            var destinosResult = await _mediator.Send(new GetAllDestinosQuery());
 
-            return reservasResult.Match(
-                reservas => Ok(reservas),
+            return destinosResult.Match(
+                destinos => Ok(destinos),
                 errors => Problem(errors)
             );
         }
@@ -36,33 +36,33 @@ namespace Web.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var reservaResult = await _mediator.Send(new GetReservaByIdQuery(id));
+            var destinoResult = await _mediator.Send(new GetDestinoByIdQuery(id));
 
-            return reservaResult.Match(
-                reserva => Ok(reserva),
+            return destinoResult.Match(
+                destino => Ok(destino),
                 errors => Problem(errors)
             );
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateReservaCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateDestinoCommand command)
         {
             var createResult = await _mediator.Send(command);
 
             return createResult.Match(
-                reservaId => Ok(reservaId),
+                destinoId => Ok(destinoId),
                 errors => Problem(errors)
             );
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateReservaCommand command)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateDestinoCommand command)
         {
             if (command.Id != id)
             {
                 List<Error> errors = new()
                 {
-                    Error.Validation("Reserva.UpdateInvalid", "The request Id does not match with the url Id.")
+                    Error.Validation("Destino.UpdateInvalid", "The request Id does not match with the url Id.")
                 };
                 return Problem(errors);
             }
@@ -70,7 +70,7 @@ namespace Web.API.Controllers
             var updateResult = await _mediator.Send(command);
 
             return updateResult.Match(
-                reservaId => NoContent(),
+                _ => NoContent(),
                 errors => Problem(errors)
             );
         }
@@ -78,10 +78,10 @@ namespace Web.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var deleteResult = await _mediator.Send(new DeleteReservaCommand(id));
+            var deleteResult = await _mediator.Send(new DeleteDestinoCommand(id));
 
             return deleteResult.Match(
-                reservaId => NoContent(),
+                _ => NoContent(),
                 errors => Problem(errors)
             );
         }

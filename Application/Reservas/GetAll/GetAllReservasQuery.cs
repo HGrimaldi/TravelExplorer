@@ -1,7 +1,6 @@
-using MediatR;
 using Reservas.Common;
 
 namespace Application.Reservas.GetAll
 {
-    public record GetAllReservasQuery : IRequest<List<ReservaResponse>>;
+    public record GetAllReservasQuery() : IRequest<ErrorOr<IReadOnlyList<ReservaResponse>>>;
 }

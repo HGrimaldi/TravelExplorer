@@ -9,12 +9,11 @@ using Application.Paquetes.Delete;
 using Application.Paquetes.GetAll;
 using ErrorOr;
 using MediatR;
-using Application.Paquete.GetAll;
 
 namespace Web.API.Controllers
 {
-    [Route("paquetes")] // Cambiar a la ruta correspondiente
-    public class PaquetesController : ApiController // Cambiar el nombre del controlador y la clase base
+    [Route("paquetes")]
+    public class PaquetesController : ApiController
     {
         private readonly ISender _mediator;
 

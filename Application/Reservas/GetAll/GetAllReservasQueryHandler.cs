@@ -1,30 +1,29 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
-using MediatR;
-using Domain.Reservas;
 using Reservas.Common;
+using Domain.Reservas;
 
 namespace Application.Reservas.GetAll
 {
-    internal sealed class GetAllReservasQueryHandler : IRequestHandler<GetAllReservasQuery, List<ReservaResponse>>
+    internal sealed class GetAllReservasQueryHandler : IRequestHandler<GetAllReservasQuery, ErrorOr<IReadOnlyList<ReservaResponse>>>
     {
         private readonly IReservaRepository _reservaRepository;
-        private readonly IMapper _mapper;
 
-        public GetAllReservasQueryHandler(IReservaRepository reservaRepository, IMapper mapper)
+        public GetAllReservasQueryHandler(IReservaRepository reservaRepository)
         {
             _reservaRepository = reservaRepository ?? throw new ArgumentNullException(nameof(reservaRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<List<ReservaResponse>> Handle(GetAllReservasQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<IReadOnlyList<ReservaResponse>>> Handle(GetAllReservasQuery query, CancellationToken cancellationToken)
         {
-            var reservas = await _reservaRepository.GetAll();
-            return _mapper.Map<List<ReservaResponse>>(reservas);
+            IReadOnlyList<Reserva> reservas = await _reservaRepository.GetAll();
+
+            return reservas.Select(reserva => new ReservaResponse(
+                    reserva.Id.Value,
+                    reserva.IdPaquete,
+                    reserva.NombreCliente,
+                    reserva.EmailCliente,
+                    reserva.TelefonoCliente,
+                    reserva.FechaViaje
+                )).ToList();
         }
     }
 }

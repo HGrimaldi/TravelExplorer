@@ -12,8 +12,8 @@ using MediatR;
 
 namespace Web.API.Controllers
 {
-    [Route("reservas")] // Cambiar a la ruta correspondiente
-    public class ReservaController : ApiController // Cambiar el nombre del controlador y la clase base
+    [Route("reservas")]
+    public class ReservaController : ApiController
     {
         private readonly ISender _mediator;
 
