@@ -1,4 +1,4 @@
-using Domain.Destinos;
+using Domain.Destino;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

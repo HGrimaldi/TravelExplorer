@@ -1,7 +1,14 @@
 using Application.Customers.GetAll;
 using Customers.Common;
 using Domain.Customers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace Application.Customers.GetAll
+{
     internal sealed class GetAllCustomersQueryHandler : IRequestHandler<GetAllCustomersQuery, ErrorOr<IReadOnlyList<CustomerResponse>>>
     {
         private readonly ICustomerRepository _customerRepository;
@@ -18,6 +25,7 @@ using Domain.Customers;
             return customers.Select(customer => new CustomerResponse(
                     customer.Id.Value,
                     customer.Nombre,
+                    customer.DUI,
                     customer.Email,
                     customer.PhoneNumber.Value,
                     new AddressResponse(customer.Direccion.Country,
@@ -26,7 +34,7 @@ using Domain.Customers;
                         customer.Direccion.City,
                         customer.Direccion.State,
                         customer.Direccion.ZipCode),
-                        customer.Active
+                    customer.Active
                 )).ToList();
         }
     }

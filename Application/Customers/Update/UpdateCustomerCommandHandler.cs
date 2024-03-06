@@ -1,3 +1,12 @@
+using Application.Common;
+using Domain.Customers;
+using Domain.Primitives;
+using Domain.ValueObjects;
+using MediatR;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Application.Customers.Update
 {
     internal sealed class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, ErrorOr<Unit>>

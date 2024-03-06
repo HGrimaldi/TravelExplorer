@@ -9,6 +9,7 @@ using Application.Paquetes.Delete;
 using Application.Paquetes.GetAll;
 using ErrorOr;
 using MediatR;
+using Application.Paquete.GetAll;
 
 namespace Web.API.Controllers
 {
@@ -36,7 +37,7 @@ namespace Web.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var paqueteResult = await _mediator.Send(new GetPaqueteByIdQuery(id));
+            var paqueteResult = await _mediator.Send(new GetPaquetesByIdQuery(id));
 
             return paqueteResult.Match(
                 paquete => Ok(paquete),

@@ -13,11 +13,11 @@ using MediatR;
 namespace Web.API.Controllers
 {
     [Route("reservas")] // Cambiar a la ruta correspondiente
-    public class ReservasController : ApiController // Cambiar el nombre del controlador y la clase base
+    public class ReservaController : ApiController // Cambiar el nombre del controlador y la clase base
     {
         private readonly ISender _mediator;
 
-        public ReservasController(ISender mediator)
+        public ReservaController(ISender mediator)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
@@ -36,7 +36,7 @@ namespace Web.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var reservaResult = await _mediator.Send(new GetReservaByIdQuery(id));
+            var reservaResult = await _mediator.Send(new GetReservasByIdQuery(id));
 
             return reservaResult.Match(
                 reserva => Ok(reserva),

@@ -1,8 +1,8 @@
 using Application.Data;
 using Domain.Customers;
-using Domain.Destino;
-using Domain.Paquete;
-using Domain.Reserva;
+using Domain.Destinos;
+using Domain.Paquetes;
+using Domain.Reservas;
 using Domain.Primitives;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repositories;

@@ -1,4 +1,4 @@
-using Domain.Paquete;
+using Domain.Paquetes;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Repositories

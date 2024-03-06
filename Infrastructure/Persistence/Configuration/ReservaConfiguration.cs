@@ -1,4 +1,4 @@
-using Domain.Reservas;
+using Domain.Reserva;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -14,13 +14,11 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.Property(r => r.Id).ValueGeneratedOnAdd();
 
-            builder.Property(r => r.FechaInicio).IsRequired();
+            builder.Property(r => r.NombreCliente).IsRequired();
+            builder.Property(r => r.EmailCliente).IsRequired();
+            builder.Property(r => r.TelefonoCliente).IsRequired();
+            builder.Property(r => r.FechaViaje).IsRequired();
 
-            builder.Property(r => r.FechaFin).IsRequired();
-
-            builder.Property(r => r.Estado).IsRequired();
-
-            // Aquí puedes agregar más configuraciones según sea necesario
         }
     }
 }

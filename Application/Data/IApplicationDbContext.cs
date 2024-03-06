@@ -1,7 +1,7 @@
 using Domain.Customers;
-using Domain.Destino;
-using Domain.Paquete;
-using Domain.Reserva;
+using Domain.Destinos;
+using Domain.Reservas;
+using Domain.Paquetes;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
