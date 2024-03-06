@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+=======
+c:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+>>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
 C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
@@ -6,7 +10,15 @@ C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.Generated
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+=======
+C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.sourcelink.json
+C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
+c:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+>>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b

@@ -6,9 +6,12 @@ namespace Domain.Customers
 {
     public sealed class Customer : AggregateRoot
     {
+<<<<<<< HEAD
         // Constructor sin parámetros
         public Customer() {}
 
+=======
+>>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
         public Customer(CustomerId id, string nombre, string dui, string email, PhoneNumber phoneNumber, Direccion direccion, bool active)
         {
             Id = id;
