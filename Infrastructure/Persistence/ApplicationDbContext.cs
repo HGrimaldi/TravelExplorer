@@ -1,10 +1,10 @@
-using Application.Data;
 using Domain.Customers;
 using Domain.Destino;
 using Domain.Paquete;
 using Domain.Reserva;
 using Domain.Primitives;
 using Microsoft.EntityFrameworkCore;
+using Application.Data;
 
 namespace Infrastructure.Persistence;
 
@@ -18,9 +18,9 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     }
 
     public DbSet<Customer> Customers { get; set; }
-    public DbSet<Destino> Destino { get; set; }
-    public DbSet<Paquete> Paquete { get; set; }
-    public DbSet<Reserva> Reserva { get; set; }
+    public DbSet<Destino> Destinos { get; set; }
+    public DbSet<Paquete> Paquetes { get; set; }
+    public DbSet<Reserva> Reservas { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

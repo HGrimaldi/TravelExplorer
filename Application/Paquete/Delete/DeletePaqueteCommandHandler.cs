@@ -1,3 +1,5 @@
+using Domain.Paquete;
+
 namespace Application.Paquete.Delete
 {
     internal sealed class DeletePaqueteCommandHandler : IRequestHandler<DeletePaqueteCommand, ErrorOr<Unit>>

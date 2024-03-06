@@ -11,9 +11,9 @@ namespace Application.Data
     public interface IApplicationDbContext
     {
         DbSet<Customer> Customers { get; set; }
-        DbSet<Destino> Destino { get; set; }
-        DbSet<Paquete> Paquete { get; set; }
-        DbSet<Reserva> Reserva { get; set; }
+        DbSet<Destino> Destinos { get; set; }
+        DbSet<Paquete> Paquetes { get; set; }
+        DbSet<Reserva> Reservas { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

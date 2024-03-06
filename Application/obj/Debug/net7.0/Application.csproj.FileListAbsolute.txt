@@ -3,3 +3,4 @@ C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application
 C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
 C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
 C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\alexl\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.sourcelink.json

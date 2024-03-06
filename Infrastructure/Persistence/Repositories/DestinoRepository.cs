@@ -1,4 +1,4 @@
-using Domain.Destinos;
+using Domain.Destino;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Repositories
@@ -15,8 +15,8 @@ namespace Infrastructure.Persistence.Repositories
         public void Add(Destino destino) => _context.Destinos.Add(destino);
         public void Delete(Destino destino) => _context.Destinos.Remove(destino);
         public void Update(Destino destino) => _context.Destinos.Update(destino);
-        public async Task<bool> ExistsAsync(Guid id) => await _context.Destinos.AnyAsync(d => d.Id == id);
-        public async Task<Destino?> GetByIdAsync(Guid id) => await _context.Destinos.SingleOrDefaultAsync(d => d.Id == id);
+        public async Task<bool> ExistsAsync(DestinoId id) => await _context.Destinos.AnyAsync(d => d.Id == id);
+        public async Task<Destino?> GetByIdAsync(DestinoId id) => await _context.Destinos.SingleOrDefaultAsync(d => d.Id == id);
         public async Task<List<Destino>> GetAll() => await _context.Destinos.ToListAsync();
     }
 }
