@@ -1,3 +1,5 @@
+using System;
+
 namespace Customers.Common
 {
     public record CustomerResponse(
@@ -19,4 +21,3 @@ namespace Customers.Common
         string ZipCode
     );
 }
-

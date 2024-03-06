@@ -1,4 +1,4 @@
-C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+c:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
 C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
@@ -10,4 +10,4 @@ C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.sourcelin
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
-C:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+c:\Users\alexl\Documents\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
