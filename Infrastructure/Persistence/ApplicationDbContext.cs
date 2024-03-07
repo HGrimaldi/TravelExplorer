@@ -5,6 +5,7 @@ using Domain.Reservas;
 using Microsoft.EntityFrameworkCore;
 using Application.Data;
 using Domain.Primitives;
+using Infrastructure.Persistence.Configuration;
 
 namespace Infrastructure.Persistence
 {

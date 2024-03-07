@@ -20,3 +20,16 @@ C:\Users\hgrim\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\hgrim\Documents\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\hgrim\Documents\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\hgrim\Documents\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\alexl\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\alexl\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\alexl\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.sourcelink.json
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\alexl\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll

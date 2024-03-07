@@ -14,7 +14,11 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
 
-             builder.Property(c => c.Id)
+            builder.Property(p => p.Precio)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired(); // Asegúrate de que sea requerido si es necesario
+
+            builder.Property(c => c.Id)
                 .HasConversion(PaqueteId => PaqueteId.Value,
                                value => new PaqueteId(value));
 
