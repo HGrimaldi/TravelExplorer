@@ -4,6 +4,8 @@ namespace Domain.Destinos
 {
     public sealed class Destino : AggregateRoot
     {
+
+        public Destino(){}
         public Destino(DestinoId id, string nombre, string descripcion, string ubicacion, bool activo)
         {
             Id = id;

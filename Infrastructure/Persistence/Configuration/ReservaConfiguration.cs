@@ -14,14 +14,14 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.Property(r => r.Id).ValueGeneratedOnAdd();
 
+            builder.Property(c => c.Id)
+                .HasConversion(ReservaId => ReservaId.Value,
+                               value => new ReservaId(value));
+
             builder.Property(r => r.NombreCliente).IsRequired();
             builder.Property(r => r.EmailCliente).IsRequired();
             builder.Property(r => r.TelefonoCliente).IsRequired();
             builder.Property(r => r.FechaViaje).IsRequired();
-<<<<<<< HEAD
-=======
-
->>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
         }
     }
 }

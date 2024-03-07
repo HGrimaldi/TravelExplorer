@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexl\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\Application.csproj": {
+    "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\obj\\",
+        "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\hgrim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hgrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj"
+              "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj"
               }
             }
           }
@@ -90,21 +94,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
+    "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\hgrim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hgrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -160,21 +168,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\alexl\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\hgrim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hgrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -188,11 +200,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Application\\Application.csproj"
+              "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Application\\Application.csproj"
               },
-              "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\alexl\\Documents\\TravelExplorer\\Domain\\Domain.csproj"
+              "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hgrim\\Documents\\TravelExplorer\\Domain\\Domain.csproj"
               }
             }
           }
@@ -243,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

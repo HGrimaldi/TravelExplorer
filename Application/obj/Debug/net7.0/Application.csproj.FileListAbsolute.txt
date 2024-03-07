@@ -1,3 +1,19 @@
 <<<<<<< HEAD
 =======
 >>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
+C:\Users\hgrim\Documents\TravelExplorer\Application\bin\Debug\net7.0\Application.deps.json
+C:\Users\hgrim\Documents\TravelExplorer\Application\bin\Debug\net7.0\Application.dll
+C:\Users\hgrim\Documents\TravelExplorer\Application\bin\Debug\net7.0\Application.pdb
+C:\Users\hgrim\Documents\TravelExplorer\Application\bin\Debug\net7.0\Domain.dll
+C:\Users\hgrim\Documents\TravelExplorer\Application\bin\Debug\net7.0\Domain.pdb
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.sourcelink.json
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Applicat.44B5EDA2.Up2Date
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.dll
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\refint\Application.dll
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\Application.pdb
+C:\Users\hgrim\Documents\TravelExplorer\Application\obj\Debug\net7.0\ref\Application.dll

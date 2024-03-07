@@ -5,12 +5,9 @@ namespace Domain.Reservas
 {
     public sealed class Reserva : AggregateRoot
     {
-<<<<<<< HEAD
         // Constructor sin parámetros
         public Reserva() {}
 
-=======
->>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
         public Reserva(ReservaId id, Guid idPaquete, string nombreCliente, string emailCliente, string telefonoCliente, DateTime fechaViaje)
         {
             Id = id;

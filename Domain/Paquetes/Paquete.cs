@@ -6,12 +6,9 @@ namespace Domain.Paquetes
 {
     public sealed class Paquete : AggregateRoot
     {
-<<<<<<< HEAD
         // Constructor sin parámetros
         public Paquete() {}
 
-=======
->>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
         public Paquete(PaqueteId id, string nombre, string descripcion, DateTime fechaInicio, DateTime fechaFin, decimal precio, bool activo)
         {
             Id = id;

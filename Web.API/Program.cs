@@ -3,11 +3,8 @@ using Infrastructure;
 using Web.API;
 using Web.API.Extensions;
 using Web.API.Middlewares;
-<<<<<<< HEAD
 using Microsoft.Extensions.DependencyInjection;
 
-=======
->>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,11 +28,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-<<<<<<< HEAD
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
-=======
-app.UseMiddleware<GloblalExceptionHandlingMiddleware>();
->>>>>>> 445520db14f862bd97211cc643700f05f88eeb5b
 
 app.MapControllers();
 
