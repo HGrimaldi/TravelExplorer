@@ -1,7 +1,11 @@
 using Domain.Customers;
+using Domain.DomainErrors;
 using Domain.Primitives;
 using Domain.ValueObjects;
-using Domain.DomainErrors;
+using MediatR;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.Customers.Create
 {
@@ -9,25 +13,21 @@ namespace Application.Customers.Create
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly IUnitOfWork _unitOfWork;
-        
+
         public CreateCustomerCommandHandler(ICustomerRepository customerRepository, IUnitOfWork unitOfWork)
         {
             _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
-        
+
         public async Task<ErrorOr<Guid>> Handle(CreateCustomerCommand command, CancellationToken cancellationToken)
         {
-            if (PhoneNumber.Create(command.PhoneNumber) is not PhoneNumber phoneNumber)
-            {
-                return Errors.Customer.PhoneNumberWithBadFormat;
-            }
+            var phoneNumber = PhoneNumber.Create(command.PhoneNumber);
+            var direccion = Direccion.Create(command.Country, command.Line1, command.Line2, command.City,
+                command.State, command.ZipCode);
 
-            if (Direccion.Create(command.Country, command.Line1, command.Line2, command.City,
-                        command.State, command.ZipCode) is not Direccion direccion)
-            {
-                return Errors.Customer.AddressWithBadFormat;
-            }
+            if (phoneNumber is null || direccion is null)
+                return Errors.Customer.InvalidData;
 
             var customer = new Customer(
                 new CustomerId(Guid.NewGuid()),
