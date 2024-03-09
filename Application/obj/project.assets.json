@@ -785,11 +785,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\obj\\",
+      "outputPath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -806,8 +806,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
-              "projectPath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj"
+            "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj"
             }
           }
         }

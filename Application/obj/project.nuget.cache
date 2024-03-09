@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoWf0IzX2LaCGmPVNpgP4hrS0Cp3zzQXtUR1BFW7L+I/nrBJHu3BpfutLx+6j3Fu9FOywP31Wny+zysQN8DmGw==",
+  "dgSpecHash": "KRypVHMMhMAOKazvAZuBburstM5JjE0/Omr5PnjBEGZBSC7iYOcytWn3UJyyprDh1ghcdT20Z7MsjZtBjs4cmg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexl\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\alexl\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",

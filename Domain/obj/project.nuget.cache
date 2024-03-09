@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ku2DRrKvU+Ka3HoHY1HIDE4JEiMG6Wbawd4DpFd/lNh+b27oYKRrfWo3rFCn8uHzTEgesN75w1clk/XP95agGw==",
+  "dgSpecHash": "adZOtASqfqR6Rk7kf6nR8sNhjgPFct9cYUkIHb9qB65sXiCyerL4bHDlcfFolrSo1sZyVRwaZcjFNK6af4Ma/w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexl\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\alexl\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
