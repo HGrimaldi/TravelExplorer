@@ -1,10 +1,11 @@
 using Domain.Primitives;
+using Domain.Reservas;
 using Domain.ValueObjects;
 using System;
 
 namespace Domain.Customers
 {
-    public sealed class Customer : AggregateRoot
+    public  class Customer : AggregateRoot
     {
         // Constructor sin parámetros
         public Customer() {}
@@ -19,6 +20,9 @@ namespace Domain.Customers
             Direccion = direccion;
             Active = active;
         }
+
+        public ReservaId ReservaId { get; set; }
+        public virtual Reserva Reserva {get; set; }
 
         public CustomerId Id { get; private set; }
         public string Nombre { get; private set; } = string.Empty;

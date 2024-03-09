@@ -14,6 +14,11 @@ namespace Infrastructure.Persistence.Configuration
             builder.HasKey(c => c.Id);
 
 
+            builder.HasOne(c => c.Reserva)
+            .WithMany()
+            .HasForeignKey(c => c.ReservaId)
+            .OnDelete(DeleteBehavior.Restrict);
+
             builder.Property(c => c.Id)
                 .HasConversion(customerId => customerId.Value,
                                value => new CustomerId(value));

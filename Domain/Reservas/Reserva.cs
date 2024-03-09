@@ -1,9 +1,10 @@
+using Domain.Paquetes;
 using Domain.Primitives;
 using System;
 
 namespace Domain.Reservas
 {
-    public sealed class Reserva : AggregateRoot
+    public  class Reserva : AggregateRoot
     {
         // Constructor sin parámetros
         public Reserva() {}
@@ -17,6 +18,9 @@ namespace Domain.Reservas
             TelefonoCliente = telefonoCliente;
             FechaViaje = fechaViaje;
         }
+
+        public PaqueteId PaqueteId { get; set; }
+        public virtual Paquete Paquete {get; set; }
 
         public ReservaId Id { get; private set; }
         public Guid IdPaquete { get; private set; }

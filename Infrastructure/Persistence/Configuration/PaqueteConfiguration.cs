@@ -14,6 +14,8 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
 
+            
+
              builder.Property(c => c.Id)
                 .HasConversion(PaqueteId => PaqueteId.Value,
                                value => new PaqueteId(value));

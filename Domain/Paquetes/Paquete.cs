@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Domain.Paquetes
 {
-    public sealed class Paquete : AggregateRoot
+    public class Paquete : AggregateRoot
     {
         // Constructor sin parámetros
         public Paquete() {}
@@ -20,7 +20,7 @@ namespace Domain.Paquetes
             Activo = activo;
         }
 
-        public PaqueteId Id { get; private set; }
+        public PaqueteId Id { get;  set; }
         public string Nombre { get; private set; } = string.Empty;
         public string Descripcion { get; private set; } = string.Empty;
         public DateTime FechaInicio { get; private set; }

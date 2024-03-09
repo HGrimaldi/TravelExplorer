@@ -11,6 +11,14 @@ namespace Infrastructure.Persistence.Configuration
             builder.ToTable("Reservas");
 
             builder.HasKey(r => r.Id);
+            
+
+            builder.HasOne(c => c.Paquete)
+            .WithMany()
+            .HasForeignKey(c => c.PaqueteId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            
 
             builder.Property(r => r.Id).ValueGeneratedOnAdd();
 

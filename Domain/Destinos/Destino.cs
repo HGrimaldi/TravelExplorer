@@ -1,8 +1,13 @@
+using Domain.Paquetes;
 using Domain.Primitives;
+
+
+
+
 
 namespace Domain.Destinos
 {
-    public sealed class Destino : AggregateRoot
+    public class Destino : AggregateRoot
     {
 
         public Destino(){}
@@ -16,6 +21,10 @@ namespace Domain.Destinos
         }
 
         public DestinoId Id { get; private set; }
+        //Aca se hace el tipado para la llave foranea 
+        public PaqueteId PaqueteId { get; set; }
+        public virtual Paquete Paquete {get; set; }
+
         public string Nombre { get; private set; } = string.Empty;
         public string Descripcion { get; private set; } = string.Empty;
         public string Ubicacion { get; private set; } = string.Empty;
@@ -27,6 +36,6 @@ namespace Domain.Destinos
             Descripcion = descripcion;
             Ubicacion = ubicacion;
             Activo = activo;
-        }
-    }
+        }
+    }
 }

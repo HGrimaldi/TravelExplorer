@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240307021736_InitialMigration")]
+    [Migration("20240309032503_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -53,10 +53,15 @@ namespace Infrastructure.Persistence.Migrations
                         .HasMaxLength(9)
                         .HasColumnType("nvarchar(9)");
 
+                    b.Property<Guid>("ReservaId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
                         .IsUnique();
+
+                    b.HasIndex("ReservaId");
 
                     b.ToTable("Customers", (string)null);
                 });
@@ -81,11 +86,16 @@ namespace Infrastructure.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("PaqueteId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Ubicacion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PaqueteId");
 
                     b.ToTable("Destinos", (string)null);
                 });
@@ -143,17 +153,28 @@ namespace Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("PaqueteId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("TelefonoCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PaqueteId");
+
                     b.ToTable("Reservas", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Customers.Customer", b =>
                 {
+                    b.HasOne("Domain.Reservas.Reserva", "Reserva")
+                        .WithMany()
+                        .HasForeignKey("ReservaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.OwnsOne("Domain.ValueObjects.Direccion", "Direccion", b1 =>
                         {
                             b1.Property<Guid>("CustomerId")
@@ -197,6 +218,30 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.Navigation("Direccion")
                         .IsRequired();
+
+                    b.Navigation("Reserva");
+                });
+
+            modelBuilder.Entity("Domain.Destinos.Destino", b =>
+                {
+                    b.HasOne("Domain.Paquetes.Paquete", "Paquete")
+                        .WithMany()
+                        .HasForeignKey("PaqueteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Paquete");
+                });
+
+            modelBuilder.Entity("Domain.Reservas.Reserva", b =>
+                {
+                    b.HasOne("Domain.Paquetes.Paquete", "Paquete")
+                        .WithMany()
+                        .HasForeignKey("PaqueteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Paquete");
                 });
 #pragma warning restore 612, 618
         }
