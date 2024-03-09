@@ -29,13 +29,10 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configuraciones de las entidades
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new DestinoConfiguration());
             modelBuilder.ApplyConfiguration(new PaqueteConfiguration());
             modelBuilder.ApplyConfiguration(new ReservaConfiguration());
-
-            // Configurar relaciones entre entidades
             modelBuilder.Entity<Reserva>()
                 .HasKey(r => r.Id);
 

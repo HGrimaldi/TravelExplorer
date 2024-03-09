@@ -22,7 +22,7 @@ namespace Application.Reservas.GetById
 
             return new ReservaResponse(
                 reserva.Id.Value,
-                reserva.IdPaquete.Value, // Acceder al valor de PaqueteId
+                reserva.IdPaquete.Value,
                 reserva.NombreCliente,
                 reserva.EmailCliente,
                 reserva.TelefonoCliente,

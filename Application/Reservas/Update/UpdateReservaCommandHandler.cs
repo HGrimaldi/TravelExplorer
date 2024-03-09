@@ -24,7 +24,7 @@ namespace Application.Reservas.Update
             var reserva = new Reserva(
                 new ReservaId(command.Id),
                 command.IdPaquete,
-                command.IdCliente, // Usar directamente el Guid proporcionado
+                command.IdCliente,
                 command.NombreCliente,
                 command.EmailCliente,
                 command.TelefonoCliente,

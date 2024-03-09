@@ -11,7 +11,7 @@ namespace Domain.Reservas
         {
             Id = id;
             IdPaquete = idPaquete;
-            ClienteId = clienteId; // Asignamos el clienteId proporcionado
+            ClienteId = clienteId;
             NombreCliente = nombreCliente;
             EmailCliente = emailCliente;
             TelefonoCliente = telefonoCliente;
@@ -19,7 +19,7 @@ namespace Domain.Reservas
         }
 
         public ReservaId Id { get; private set; }
-        public PaqueteId IdPaquete { get; private set; } // Cambiado a PaqueteId
+        public PaqueteId IdPaquete { get; private set; }
         public CustomerId ClienteId { get; private set; }
         public string NombreCliente { get; private set; } = string.Empty;
         public string EmailCliente { get; private set; } = string.Empty;

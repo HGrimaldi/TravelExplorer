@@ -19,7 +19,6 @@ namespace Infrastructure.Persistence.Repositories
 
         public void Add(Paquete paquete)
         {
-            // Agregar la nueva reserva al paquete
             foreach (var reserva in paquete.Reservas)
             {
                 reserva.Paquete = paquete;

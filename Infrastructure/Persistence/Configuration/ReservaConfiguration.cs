@@ -26,7 +26,7 @@ namespace Infrastructure.Persistence.Configuration
             // Relación con Cliente (una reserva pertenece a un cliente)
             builder.HasOne(r => r.Cliente)
                 .WithMany(c => c.Reservas)
-                .HasForeignKey(r => r.ClienteId); // Utilizamos ClienteId en lugar de IdCliente
+                .HasForeignKey(r => r.ClienteId);
 
             // Relación con Paquete (una reserva pertenece a un paquete)
             builder.HasOne(r => r.Paquete)
