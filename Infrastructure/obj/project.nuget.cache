@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0h/iGk0DTG02ldxXYK9z0zpTwqtdImVfoBlif8knvT4sJTQs7oHoEgm407vGLxREatjYnEDfP8khDJ4K0DSXGw==",
+  "dgSpecHash": "SnuBeIN/SiWlJ2dg4kZHKQOx2LcnVSE4QaNMYFYzncGd+coVCdlkRrJHaSkIfrskwVvtt5SChvK1gfx6v4r7Jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexl\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\alexl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

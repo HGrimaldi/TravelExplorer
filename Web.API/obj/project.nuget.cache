@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g6PVxiNVbAY6jGy8wN7F3Z3iuW9uQbxvBV7lq4gUgwWe/hjs1jMe8qax8x4PD7ZVb3TuBxzzr1JexkducC5+iQ==",
+  "dgSpecHash": "x8cFFn5rFR/HPzbP5KL51OUBlX+dD3OBC1bXN2jz5eb5DNsoAsy+U0KzskhUMkEc85IQ84FuPQGVWbkkaW8TTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexl\\Desktop\\TravelExplorer\\Web.API\\Web.API.csproj",
+  "projectFilePath": "c:\\Users\\alexl\\Desktop\\TravelExplorer\\Web.API\\Web.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexl\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\alexl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
