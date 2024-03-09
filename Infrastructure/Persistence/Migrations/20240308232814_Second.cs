@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Second : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -66,11 +66,36 @@ namespace Infrastructure.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PaqueteDestino",
+                columns: table => new
+                {
+                    DestinosId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PaquetesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PaqueteDestino", x => new { x.DestinosId, x.PaquetesId });
+                    table.ForeignKey(
+                        name: "FK_PaqueteDestino_Destinos_DestinosId",
+                        column: x => x.DestinosId,
+                        principalTable: "Destinos",
+                        principalColumn: "DestinoId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PaqueteDestino_Paquetes_PaquetesId",
+                        column: x => x.PaquetesId,
+                        principalTable: "Paquetes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reservas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdPaquete = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     NombreCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmailCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TelefonoCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -79,6 +104,18 @@ namespace Infrastructure.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reservas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reservas_Customers_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reservas_Paquetes_IdPaquete",
+                        column: x => x.IdPaquete,
+                        principalTable: "Paquetes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -86,22 +123,40 @@ namespace Infrastructure.Persistence.Migrations
                 table: "Customers",
                 column: "Email",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PaqueteDestino_PaquetesId",
+                table: "PaqueteDestino",
+                column: "PaquetesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservas_ClienteId",
+                table: "Reservas",
+                column: "ClienteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reservas_IdPaquete",
+                table: "Reservas",
+                column: "IdPaquete");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "PaqueteDestino");
+
+            migrationBuilder.DropTable(
+                name: "Reservas");
 
             migrationBuilder.DropTable(
                 name: "Destinos");
 
             migrationBuilder.DropTable(
-                name: "Paquetes");
+                name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Reservas");
+                name: "Paquetes");
         }
     }
 }

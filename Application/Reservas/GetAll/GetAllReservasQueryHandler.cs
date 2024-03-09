@@ -1,5 +1,7 @@
 using Reservas.Common;
 using Domain.Reservas;
+using System;
+using System.Collections.Generic;
 
 namespace Application.Reservas.GetAll
 {
@@ -18,7 +20,7 @@ namespace Application.Reservas.GetAll
 
             return reservas.Select(reserva => new ReservaResponse(
                     reserva.Id.Value,
-                    reserva.IdPaquete,
+                    reserva.IdPaquete.Value,
                     reserva.NombreCliente,
                     reserva.EmailCliente,
                     reserva.TelefonoCliente,

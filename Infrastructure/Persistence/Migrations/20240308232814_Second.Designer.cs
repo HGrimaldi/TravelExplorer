@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240307201538_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240308232814_Second")]
+    partial class Second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("DestinoPaquete", b =>
+                {
+                    b.Property<Guid>("DestinosId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PaquetesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("DestinosId", "PaquetesId");
+
+                    b.HasIndex("PaquetesId");
+
+                    b.ToTable("PaqueteDestino", (string)null);
+                });
 
             modelBuilder.Entity("Domain.Customers.Customer", b =>
                 {
@@ -129,6 +144,9 @@ namespace Infrastructure.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("EmailCliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -149,7 +167,26 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("IdPaquete");
+
                     b.ToTable("Reservas", (string)null);
+                });
+
+            modelBuilder.Entity("DestinoPaquete", b =>
+                {
+                    b.HasOne("Domain.Destinos.Destino", null)
+                        .WithMany()
+                        .HasForeignKey("DestinosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Paquetes.Paquete", null)
+                        .WithMany()
+                        .HasForeignKey("PaquetesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Customers.Customer", b =>
@@ -197,6 +234,35 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.Navigation("Direccion")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Reservas.Reserva", b =>
+                {
+                    b.HasOne("Domain.Customers.Customer", "Cliente")
+                        .WithMany("Reservas")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Paquetes.Paquete", "Paquete")
+                        .WithMany("Reservas")
+                        .HasForeignKey("IdPaquete")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Paquete");
+                });
+
+            modelBuilder.Entity("Domain.Customers.Customer", b =>
+                {
+                    b.Navigation("Reservas");
+                });
+
+            modelBuilder.Entity("Domain.Paquetes.Paquete", b =>
+                {
+                    b.Navigation("Reservas");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,5 @@
 using Reservas.Common;
+using System;
 
 namespace Application.Reservas.GetById
 {

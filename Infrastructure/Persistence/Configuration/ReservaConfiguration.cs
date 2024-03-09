@@ -22,6 +22,16 @@ namespace Infrastructure.Persistence.Configuration
             builder.Property(r => r.EmailCliente).IsRequired();
             builder.Property(r => r.TelefonoCliente).IsRequired();
             builder.Property(r => r.FechaViaje).IsRequired();
+
+            // Relación con Cliente (una reserva pertenece a un cliente)
+            builder.HasOne(r => r.Cliente)
+                .WithMany(c => c.Reservas)
+                .HasForeignKey(r => r.ClienteId); // Utilizamos ClienteId en lugar de IdCliente
+
+            // Relación con Paquete (una reserva pertenece a un paquete)
+            builder.HasOne(r => r.Paquete)
+                .WithMany(p => p.Reservas)
+                .HasForeignKey(r => r.IdPaquete);
         }
     }
 }

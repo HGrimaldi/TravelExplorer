@@ -13,25 +13,20 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.HasKey(c => c.Id);
 
-
             builder.Property(c => c.Id)
                 .HasConversion(customerId => customerId.Value,
                                value => new CustomerId(value));
 
             builder.Property(c => c.Nombre).HasMaxLength(50);
-
             builder.Property(c => c.DUI).HasMaxLength(50);
-
             builder.Property(c => c.Email).HasMaxLength(255);
             builder.HasIndex(c => c.Email).IsUnique();
 
             builder.Property(c => c.PhoneNumber)
-                    .HasConversion(
-                        phoneNumber => phoneNumber.Value,
-                        value => PhoneNumber.Create(value) 
-                    )
-            .HasMaxLength(9);
-
+                .HasConversion(
+                    phoneNumber => phoneNumber.Value,
+                    value => PhoneNumber.Create(value))
+                .HasMaxLength(9);
 
             builder.OwnsOne(c => c.Direccion, direccionBuilder =>
             {
@@ -44,6 +39,11 @@ namespace Infrastructure.Persistence.Configuration
             });
 
             builder.Property(c => c.Active);
+
+            // Relación con Reserva (un cliente puede tener muchas reservas)
+            builder.HasMany(c => c.Reservas)
+                .WithOne(r => r.Cliente)
+                .HasForeignKey(r => r.ClienteId);
         }
     }
 }

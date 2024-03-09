@@ -1,9 +1,13 @@
-using Domain.Destinos;
 using Domain.Customers;
+using Domain.Destinos;
 using Domain.Paquetes;
 using Domain.Reservas;
 using Microsoft.EntityFrameworkCore;
 using Application.Data;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Domain.Primitives;
 using Infrastructure.Persistence.Configuration;
 
@@ -25,7 +29,27 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            // Configuraciones de las entidades
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+            modelBuilder.ApplyConfiguration(new DestinoConfiguration());
+            modelBuilder.ApplyConfiguration(new PaqueteConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservaConfiguration());
+
+            // Configurar relaciones entre entidades
+            modelBuilder.Entity<Reserva>()
+                .HasKey(r => r.Id);
+
+            modelBuilder.Entity<Reserva>()
+                .HasOne(r => r.Cliente)
+                .WithMany(c => c.Reservas)
+                .HasForeignKey(r => r.ClienteId);
+
+            modelBuilder.Entity<Reserva>()
+                .HasOne(r => r.Paquete)
+                .WithMany(p => p.Reservas)
+                .HasForeignKey(r => r.IdPaquete);
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

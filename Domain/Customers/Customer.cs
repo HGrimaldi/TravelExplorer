@@ -1,12 +1,13 @@
 using Domain.Primitives;
+using Domain.Reservas;
 using Domain.ValueObjects;
 using System;
+using System.Collections.Generic;
 
 namespace Domain.Customers
 {
     public sealed class Customer : AggregateRoot
     {
-        // Constructor sin parámetros
         public Customer() {}
 
         public Customer(CustomerId id, string nombre, string dui, string email, PhoneNumber phoneNumber, Direccion direccion, bool active)
@@ -37,5 +38,8 @@ namespace Domain.Customers
             Direccion = direccion;
             Active = active;
         }
+
+        // Relación con Reserva (un cliente puede tener muchas reservas)
+        public List<Reserva> Reservas { get; private set; } = new List<Reserva>();
     }
 }

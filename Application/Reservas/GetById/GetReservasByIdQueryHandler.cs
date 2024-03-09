@@ -1,5 +1,6 @@
 using Domain.Reservas;
 using Reservas.Common;
+using System;
 
 namespace Application.Reservas.GetById
 {
@@ -21,7 +22,7 @@ namespace Application.Reservas.GetById
 
             return new ReservaResponse(
                 reserva.Id.Value,
-                reserva.IdPaquete,
+                reserva.IdPaquete.Value, // Acceder al valor de PaqueteId
                 reserva.NombreCliente,
                 reserva.EmailCliente,
                 reserva.TelefonoCliente,

@@ -1,4 +1,6 @@
+using Domain.Destinos;
 using Domain.Primitives;
+using Domain.Reservas;
 using System;
 using System.Collections.Generic;
 
@@ -6,9 +8,6 @@ namespace Domain.Paquetes
 {
     public sealed class Paquete : AggregateRoot
     {
-        // Constructor sin parámetros
-        public Paquete() {}
-
         public Paquete(PaqueteId id, string nombre, string descripcion, DateTime fechaInicio, DateTime fechaFin, decimal precio, bool activo)
         {
             Id = id;
@@ -37,5 +36,11 @@ namespace Domain.Paquetes
             Precio = precio;
             Activo = activo;
         }
+
+        // Relación con Destino (un paquete puede incluir muchos destinos)
+        public List<Destino> Destinos { get; private set; } = new List<Destino>();
+
+        // Relación con Reserva (un paquete puede tener muchas reservas)
+        public List<Reserva> Reservas { get; private set; } = new List<Reserva>();
     }
 }

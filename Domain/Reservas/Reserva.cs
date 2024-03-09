@@ -1,17 +1,17 @@
-using Domain.Primitives;
 using System;
+using Domain.Customers;
+using Domain.Paquetes;
+using Domain.Primitives;
 
 namespace Domain.Reservas
 {
     public sealed class Reserva : AggregateRoot
     {
-        // Constructor sin parámetros
-        public Reserva() {}
-
-        public Reserva(ReservaId id, Guid idPaquete, string nombreCliente, string emailCliente, string telefonoCliente, DateTime fechaViaje)
+        public Reserva(ReservaId id, PaqueteId idPaquete, CustomerId clienteId, string nombreCliente, string emailCliente, string telefonoCliente, DateTime fechaViaje)
         {
             Id = id;
             IdPaquete = idPaquete;
+            ClienteId = clienteId; // Asignamos el clienteId proporcionado
             NombreCliente = nombreCliente;
             EmailCliente = emailCliente;
             TelefonoCliente = telefonoCliente;
@@ -19,7 +19,8 @@ namespace Domain.Reservas
         }
 
         public ReservaId Id { get; private set; }
-        public Guid IdPaquete { get; private set; }
+        public PaqueteId IdPaquete { get; private set; } // Cambiado a PaqueteId
+        public CustomerId ClienteId { get; private set; }
         public string NombreCliente { get; private set; } = string.Empty;
         public string EmailCliente { get; private set; } = string.Empty;
         public string TelefonoCliente { get; private set; } = string.Empty;
@@ -32,5 +33,11 @@ namespace Domain.Reservas
             TelefonoCliente = telefonoCliente;
             FechaViaje = fechaViaje;
         }
+
+        // Relación con Cliente (una reserva pertenece a un cliente)
+        public Customer Cliente { get; set; }
+
+        // Relación con Paquete (una reserva pertenece a un paquete)
+        public Paquete Paquete { get; set; }
     }
 }

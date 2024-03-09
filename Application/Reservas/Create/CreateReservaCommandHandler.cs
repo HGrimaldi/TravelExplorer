@@ -19,6 +19,7 @@ namespace Application.Reservas.Create
             var reserva = new Reserva(
                 new ReservaId(Guid.NewGuid()),
                 command.IdPaquete,
+                command.IdCliente,
                 command.NombreCliente,
                 command.EmailCliente,
                 command.TelefonoCliente,

@@ -16,15 +16,24 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.Property(p => p.Precio)
                 .HasColumnType("decimal(18,2)")
-                .IsRequired(); // Asegúrate de que sea requerido si es necesario
+                .IsRequired();
 
             builder.Property(c => c.Id)
                 .HasConversion(PaqueteId => PaqueteId.Value,
                                value => new PaqueteId(value));
 
-
             builder.Property(p => p.Nombre).HasMaxLength(100).IsRequired();
             builder.Property(p => p.Descripcion).HasMaxLength(255);
+
+            // Relación con Destino (un paquete puede incluir muchos destinos)
+            builder.HasMany(p => p.Destinos)
+                .WithMany(d => d.Paquetes)
+                .UsingEntity(j => j.ToTable("PaqueteDestino"));
+
+            // Relación con Reserva (un paquete puede tener muchas reservas)
+            builder.HasMany(p => p.Reservas)
+                .WithOne(r => r.Paquete)
+                .HasForeignKey(r => r.IdPaquete);
         }
     }
 }

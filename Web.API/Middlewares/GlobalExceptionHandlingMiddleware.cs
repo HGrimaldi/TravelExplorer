@@ -1,6 +1,8 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,18 +28,24 @@ namespace Web.API.Middlewares
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Unhandled exception occurred.");
-
-                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                context.Response.ContentType = "application/json";
+                _logger.LogError(ex, "Unhandled exception occurred: {Message}", ex.Message);
 
                 var problemDetails = new ProblemDetails
                 {
-                    Status = context.Response.StatusCode,
-                    Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
+                    Status = (int)HttpStatusCode.InternalServerError,
                     Title = "Internal Server Error",
                     Detail = "An unexpected error occurred while processing your request."
                 };
+
+                if (ex is ValidationException validationException)
+                {
+                    problemDetails.Status = (int)HttpStatusCode.BadRequest;
+                    problemDetails.Title = "Validation Error";
+                    problemDetails.Detail = validationException.Message;
+                }
+
+                context.Response.StatusCode = problemDetails.Status ?? (int)HttpStatusCode.InternalServerError;
+                context.Response.ContentType = "application/json";
 
                 await context.Response.WriteAsync(JsonSerializer.Serialize(problemDetails));
             }

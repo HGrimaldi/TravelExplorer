@@ -1,10 +1,12 @@
+using Domain.Paquetes;
 using Domain.Primitives;
+using System;
+using System.Collections.Generic;
 
 namespace Domain.Destinos
 {
     public sealed class Destino : AggregateRoot
     {
-
         public Destino(DestinoId id, string nombre, string descripcion, string ubicacion, bool activo)
         {
             Id = id;
@@ -27,5 +29,8 @@ namespace Domain.Destinos
             Ubicacion = ubicacion;
             Activo = activo;
         }
+
+        // Relación con Paquete (un destino puede estar en muchos paquetes)
+        public List<Paquete> Paquetes { get; private set; } = new List<Paquete>();
     }
 }
