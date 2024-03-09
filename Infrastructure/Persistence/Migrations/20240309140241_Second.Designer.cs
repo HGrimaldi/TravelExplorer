@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240308232814_Second")]
+    [Migration("20240309140241_Second")]
     partial class Second
     {
         /// <inheritdoc />
@@ -50,8 +50,8 @@ namespace Infrastructure.Persistence.Migrations
 
                     b.Property<string>("DUI")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -203,17 +203,17 @@ namespace Infrastructure.Persistence.Migrations
 
                             b1.Property<string>("Country")
                                 .IsRequired()
-                                .HasMaxLength(3)
-                                .HasColumnType("nvarchar(3)");
+                                .HasMaxLength(50)
+                                .HasColumnType("nvarchar(50)");
 
                             b1.Property<string>("Line1")
                                 .IsRequired()
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("Line2")
-                                .HasMaxLength(20)
-                                .HasColumnType("nvarchar(20)");
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)");
 
                             b1.Property<string>("State")
                                 .IsRequired()

@@ -18,7 +18,7 @@ namespace Infrastructure.Persistence.Configuration
                                value => new CustomerId(value));
 
             builder.Property(c => c.Nombre).HasMaxLength(50);
-            builder.Property(c => c.DUI).HasMaxLength(50);
+            builder.Property(c => c.DUI).HasMaxLength(10);
             builder.Property(c => c.Email).HasMaxLength(255);
             builder.HasIndex(c => c.Email).IsUnique();
 
@@ -30,9 +30,9 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.OwnsOne(c => c.Direccion, direccionBuilder =>
             {
-                direccionBuilder.Property(a => a.Country).HasMaxLength(3);
-                direccionBuilder.Property(a => a.Line1).HasMaxLength(20);
-                direccionBuilder.Property(a => a.Line2).HasMaxLength(20).IsRequired(false);
+                direccionBuilder.Property(a => a.Country).HasMaxLength(50);
+                direccionBuilder.Property(a => a.Line1).HasMaxLength(30);
+                direccionBuilder.Property(a => a.Line2).HasMaxLength(30).IsRequired(false);
                 direccionBuilder.Property(a => a.City).HasMaxLength(40);
                 direccionBuilder.Property(a => a.State).HasMaxLength(40);
                 direccionBuilder.Property(a => a.ZipCode).HasMaxLength(10).IsRequired(false);

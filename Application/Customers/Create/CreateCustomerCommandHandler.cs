@@ -26,7 +26,7 @@ namespace Application.Customers.Create
             var direccion = Direccion.Create(command.Country, command.Line1, command.Line2, command.City,
                 command.State, command.ZipCode);
 
-            if (phoneNumber is null || direccion is null)
+            if (phoneNumber is null || direccion is null || DUI.Create(command.DUI) is null)
                 return Errors.Customer.InvalidData;
 
             var customer = new Customer(

@@ -27,15 +27,15 @@ namespace Application.Customers.Create
 
             RuleFor(r => r.Country)
                 .NotEmpty()
-                .MaximumLength(3);
+                .MaximumLength(50);
 
             RuleFor(r => r.Line1)
                 .NotEmpty()
-                .MaximumLength(20)
+                .MaximumLength(30)
                 .WithName("Addres Line 1");
 
             RuleFor(r => r.Line2)
-                .MaximumLength(20)
+                .MaximumLength(30)
                 .WithName("Addres Line 2");
 
             RuleFor(r => r.City)
